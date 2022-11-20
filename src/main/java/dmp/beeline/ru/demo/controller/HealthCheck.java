@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/health/")
+@RequestMapping("/health")
 public class HealthCheck {
     @GetMapping
     public ResponseEntity<Map<String, String>> checkHealth() {

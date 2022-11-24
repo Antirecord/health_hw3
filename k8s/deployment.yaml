@@ -14,20 +14,21 @@ spec:
     spec:
       containers:
       - name: health-check
-        image: zelimkhan96/health_check
+        imagePullPolicy: "Always"
+        image: zelimkhan96/health_check:latest
         ports:
           - name: web
             containerPort: 8000
         livenessProbe:
           httpGet:
             port: 8000
-            path: /health
+            path: /health/
           initialDelaySeconds: 10
           periodSeconds: 5
           timeoutSeconds: 2
         readinessProbe:
           httpGet:
             port: 8000
-            path: /health
+            path: /health/
           initialDelaySeconds: 10
           periodSeconds: 5
